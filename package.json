@@ -1,0 +1,66 @@
+{
+  "name": "my-presentations",
+  "version": "0.0.0",
+  "description": "Central place for all my Presentations",
+  "author": "Abhishek Anil Deshmukh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zulko/eaglejs-demo.git"
+  },
+  "license": "ISC",
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "animate.css": "^3.7.2",
+    "chart.js": "2.5.0",
+    "eagle.js": "^0.4.4",
+    "highlight.js": "^9.18.5",
+    "vue": "^2.6.12",
+    "vue-router": "^2.2.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-eslint": "^3.12.1",
+    "@vue/cli-service": "^3.12.1",
+    "@vue/eslint-config-standard": "^3.0.5",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.1.0",
+    "sass": "^1.32.5",
+    "sass-loader": "^7.3.1",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/standard"
+    ],
+    "rules": {
+      "arrow-parens": 0,
+      "generator-star-spacing": 0
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
