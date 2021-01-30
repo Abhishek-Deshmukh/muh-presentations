@@ -16,19 +16,11 @@ export default {
         'Credits': [
           {
             name: 'Abhishek Anil Deshmukh',
-            role: 'Presenter'
+            role: 'Presenter & Author'
           },
           {
-            name: 'Samir Banik & Vijay Iyer',
-            role: 'PhD guidance'
-          },
-          {
-            name: 'Sarada',
-            role: 'Flux Data'
-          },
-          {
-            name: 'Abhishek Anil Deshmukh',
-            role: 'Author'
+            name: 'Bedangadas Mohanty & Lab',
+            role: 'Project guidance'
           }
         ],
         'Software': [
@@ -99,9 +91,12 @@ export default {
       }
     }
     animation-name: scroll;
-    animation-duration: 24s;
+    animation-duration: 34s;
     animation-timing-function: linear;
-    -webkit-animation-timing-function: linear; /* Safari 4.0 - 8.0 */
+    -webkit-animation-timing-function: linear;
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 }
 </style>

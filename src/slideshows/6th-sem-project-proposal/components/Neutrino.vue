@@ -1,6 +1,7 @@
 <template lang="pug">
 div
   .neutrino(:style="'animation-duration:' + 1/energy + 's;'")
+    span ν
   .line(:style="'margin-top: 30px; z-index: 0; animation-duration:' +  1.6/energy + 's;'")
   .line(:style="'margin-top: 60px; z-index: 2; animation-duration:' + 1.2/energy +'s;'")
   .line(:style="'margin-top: 104px; z-index: 0; animation-duration:' + 2/energy +'s;'")
@@ -20,19 +21,19 @@ export default {
 <style scoped lang="scss">
 @keyframes vibration {
   0% {
-    margin-top: 60px;
+    margin-top: 30px;
   }
   50% {
-    margin-top: 40px;
+    margin-top: 10px;
   }
   100% {
-    margin-top: 60px;
+    margin-top: 30px;
   }
 }
 
 @keyframes moving-bg {
   0% {
-    right: 50%;
+    right: 60%;
   }
   100% {
     right: 100%;
@@ -48,6 +49,15 @@ export default {
   animation-name: vibration;
   animation-iteration-count: infinite;
   position: absolute;
+  span{
+    margin-left: 18px;
+    font-size: 48px;
+    letter-spacing: -0.2em;
+    line-height: 1.3;
+    font-weight: 100;
+    padding-left: 0px;
+    color: #ffffff33;
+  }
 }
 .line {
   position: absolute;
