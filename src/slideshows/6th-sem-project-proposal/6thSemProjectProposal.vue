@@ -18,7 +18,9 @@
     slide(:steps=4 enter='bounceInRight' leave='bounceOutLeft')
       h3 Rare Event
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
-        p(v-if="step>=2") Something
+        p(v-if="step>=2") Rare events are events that happen only a few times over a long period of time.
+      eg-transition(enter='bounceInRight' leave='bounceOutRight')
+        p(v-if="step>=2") Like in the case of SuperCDMS, with 24 Detectors about a 1kg
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
         p(v-if="step>=3") Examples of such rare interactions would include Coherent Elastic Neutrino Nucleus S
           |cattering, Dark matter Interactions, neutrino less double beta decay.
@@ -98,7 +100,7 @@
                 li(v-if='step>= 8') Creates a Neutrion Flux of 3.73 x 10<sup>11</sup>neutrino/cm<sup>2</sup>/s
           .col-6
             eg-transition(enter='bounceInRight' leave='bounceOutRight')
-              img(v-if='step >= 4' alt="Uranium Decay Chain" src="./assets/uranium_decay_chain.png")
+              img(v-if='step >= 4' alt="Uranium Decay Chain" src="./assets/uranium_decay_chain.png").u-chain
 
     slide(:steps=8, enter='bounceInRight')
       h3 The signal
@@ -151,7 +153,7 @@
       eg-transition(enter='bounceInRight' leave='BounceOutRight')
         p(v-if='step >=2') <b>Signal vs Background</b>
       eg-transition(enter='bounceInRight' leave='bounceInRight')
-        p something
+        p(v-if='step >=3') something
       eg-transition(enter='bounceInRight' leave='bounceInRight')
         p(v-if='step>=5') Background needs to be
       ul
@@ -171,7 +173,6 @@
 
     slide(:steps=5 enter='bounceInRight')
       h3 Reducing the background
-      p.small What I wanna work on...
       eg-transition(enter='bounceInRight' leave='bounceInRight')
         p(v-if='step>=2') To stop the backgrounds from reaching the detector:
       .container-fluid
@@ -194,7 +195,7 @@
           |
           |we want to "somehow" differentiate it's signal from the signal of CEvNS
 
-    slide(:steps=5 enter='bounceInRight' leave='bounceOutLeft')
+    slide(:steps=3 enter='bounceInRight' leave='bounceOutLeft')
       h3 Simulation
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
         p(v-if='step>=2') We use <b>GEANT4</b> as the framework for Simulation.
@@ -326,6 +327,10 @@ export default {
     line-height: 1.1;
     margin-bottom: -0.36px;
     margin-top: 15.64px;
+  }
+  .u-chain {
+    position: absolute;
+    width: 42%;
   }
   .quarter {
     text-align: center;
