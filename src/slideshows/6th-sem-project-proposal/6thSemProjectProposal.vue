@@ -3,7 +3,7 @@
   .eg-slideshow
     slide(enter='fadeIn' leave='bounceOutLeft')
       .center.frontpage
-        h1 Understanding Background for Rare-Event searches
+        h1 Understanding Backgrounds for Rare-Event searches
         h4 Abhishek Anil Deshmukh
           br
           span 6th sem Project Proposal
@@ -15,20 +15,30 @@
           p Previous:
           img.control-schema(src='./assets/controlsPrev.svg')
 
-    slide(:steps=4 enter='bounceInRight' leave='bounceOutLeft')
+    slide(:steps=4 enter='bounceInRight' leave='bounceOutLeft').wide-slide
       h3 Rare Event
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
-        p(v-if="step>=2") Rare events are events that happen only a few times over a long period of time.
-      eg-transition(enter='bounceInRight' leave='bounceOutRight')
-        p(v-if="step>=2") Like in the case of SuperCDMS, with 24 Detectors about a 1kg
-      eg-transition(enter='bounceInRight' leave='bounceOutRight')
-        p(v-if="step>=3") Examples of such rare interactions would include Coherent Elastic Neutrino Nucleus S
-          |cattering, Dark matter Interactions, neutrino less double beta decay.
-      eg-transition(enter='bounceInRight' leave='bounceOutRight')
-        p(v-if="step>=4") Some examples of experiments that search for rare events are:
-          ul
-            li <b>MINER</b> (CEvNS, Sterile Neutrino)
-            li <b>SuperCDMS</b>. (Dark matter)
+        img(v-if="step>=2" src="./assets/rare_event.png").cross-section-plot
+      .container-fluid
+        .row.center
+          .col-8
+              eg-transition(enter='bounceInRight' leave='bounceOutRight')
+                p(v-if="step>=2") Rare events are events that happen only a few times over a long period of time.
+              eg-transition(enter='bounceInRight' leave='bounceOutRight')
+                p(v-if="step>=2") Like in the case of SuperCDMS, with 15 germanium Detectors about 600g each reached
+                  |
+                  |a cross-section
+                  |
+                  |of 10<sup>-41</sup>cm<sup>2</sup> for a mass of ~ 10GeVc<sup>-2</sup> with 95% CL.
+                  a(href="https://www.slac.stanford.edu/exp/cdms/ScienceResults/Publications/PhysRevD.97.022002.pdf" target="_blank") [1]
+              eg-transition(enter='bounceInRight' leave='bounceOutRight')
+                p(v-if="step>=3") Examples of such rare interactions would include Coherent Elastic Neutrino Nucleus S
+                  |cattering(CEvNS), Dark matter Interactions, neutrino less double beta decay.
+              eg-transition(enter='bounceInRight' leave='bounceOutRight')
+                p(v-if="step>=4") Some examples of experiments that search for rare events are:
+                  ul
+                    li <b>MINER</b> (CEvNS, Sterile Neutrino)
+                    li <b>SuperCDMS</b>. (Dark matter)
 
     slide(:steps=5, enter='bounceInRight' leave='bounceOutLeft').MINER
       h3
@@ -38,14 +48,16 @@
       .container-fluid
         .row
           eg-transition(enter='bounceInRight' leave='bounceOutRight')
-            p(v-if="step >= 2") Mitchell Institute Neutrino Expirement at Reactor
+            p(v-if="step >= 2") Mitchell Institute Neutrino Experiment at Reactor
           eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
             p(v-if="step >= 3") Located at Nuclear Science Center in Texas A & M University
           .col-6
             eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
               p(v-if="step >= 4") Searching for Coherent Elastic neutrino Nucleus Scattering (CEvNS)
             eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
-              p(v-if="step >= 5") By placing detectors a few meters from the reactor core.
+              p(v-if="step >= 5") By placing low threshold, cryogenic germanium and silicon
+                |
+                |detectors a few meters from the reactor core.
           .col-6
             eg-transition(enter='bounceInRight' leave='bounceOutRight')
               img(v-if="step >= 4" src="./assets/CEvNS.jpg" alt="CEvNS")
@@ -66,16 +78,18 @@
           p Neutrino-Nucleus Collision
 
       eg-transition(enter='fadeIn' leave='fadeOut')
-        .quarter(v-if="step >= 4")
-         img(src='./assets/icons/basic_mixer2.svg')
-         h4 Backgrounds
-         p Cosmogenic and Radiogenic backgrounds
+        div(style="border: solid 1px black;border-radius: 15px;padding:10px;" v-if="step >= 4")
+          eg-transition(enter='fadeIn' leave='fadeOut')
+            .quarter(v-if="step >= 4")
+             img(src='./assets/icons/basic_mixer2.svg')
+             h4 Backgrounds
+             p Cosmogenic and Radiogenic backgrounds
 
-      eg-transition(enter='fadeIn' leave='fadeOut')
-        .quarter(v-if="step >= 5")
-          img(src='./assets/icons/basic_display.svg')
-          h4 The Simulation
-          p GEANT4 and MCNP
+          eg-transition(enter='fadeIn' leave='fadeOut')
+            .quarter(v-if="step >= 5")
+              img(src='./assets/icons/basic_display.svg')
+              h4 The Simulation
+              p GEANT4 and MCNP
 
     slide(:steps=8, enter='bounceInRight' leave='bounceOutLeft')
       h3 The Reactor
@@ -97,18 +111,20 @@
               eg-transition(enter='fadeIn' leave='fadeOut')
                 li(v-if='step>= 7') Gamma, alpha, beta (Background)
               eg-transition(enter='fadeIn' leave='fadeOut')
-                li(v-if='step>= 8') Creates a Neutrion Flux of 3.73 x 10<sup>11</sup>neutrino/cm<sup>2</sup>/s
+                li(v-if='step>= 8') Creates a Neutrion Flux of 3.73 x 10<sup>11</sup> neutrino/cm<sup>2</sup>/s at 2m
+                  a(:href="`${publicPath}sharada_project_Update_1.pdf`" target="_blank") [2]
           .col-6
             eg-transition(enter='bounceInRight' leave='bounceOutRight')
               img(v-if='step >= 4' alt="Uranium Decay Chain" src="./assets/uranium_decay_chain.png").u-chain
 
-    slide(:steps=8, enter='bounceInRight')
-      h3 The signal
+    slide(:steps=8, enter='bounceInRight' leave='bounceOutLeft')
+      h3 The Signal
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
         img(src="./assets/CEvNS.jpg" v-if="step >= 3").cevns
       .center
         eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
           p(v-if='step >= 2') Caused by CEvNS (Coherent Elastic Neutrino Nucleus Scattering)
+            a(href="https://journals.aps.org/prd/pdf/10.1103/PhysRevD.9.1389" target="_blank") [4]
       .container-fluid
         .row
           eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
@@ -116,10 +132,11 @@
               Neutrino(:energy="1")
           eg-transition(enter='bounceInRight' leave='bounceOutRight')
             .col-7(v-if='step >= 3').half-wide
-              p.coherent Coherent: Collision with the nucleus as a whole. Requires the neutrino to have energy order of 50MeV.
-
+              p.coherent <b>Coherent</b>: Collision with the nucleus as a whole. Requires the neutrino to have
+                |
+                | energy order of tens of MeV.
         eg-transition(enter='bounceInRight' leave='bounceOutRight')
-          p(v-if='step >= 4') Elastic implies conservation of Energy and Momentum.
+          p(v-if='step >= 4') <b>Elastic</b> implies conservation of Energy and Momentum.
         eg-transition(enter='bounceInRight' leave='bounceOutRight')
           p(v-if='step >= 5') These interactions cause:
         ul
@@ -128,89 +145,76 @@
           eg-transition(enter='fadeIn' leave='fadeOut')
             li(v-if='step>=7') Nuclear Recoil (Recorded in the form in deposited energy) (THE SIGNAL)
         eg-transition(enter='bounceInRight' leave='bounceOutRight')
-          p(v-if="step >=8") Expecting an Event rate of 0.488/day
+          p(v-if="step >=8") Expected event rate ~ 0.488/day
+            a(:href="`${publicPath}sharada_project_Update_1.pdf`" target="_blank") [2]
+            |
+            | at 2 meters for a 100g Si detector
 
-    slide(:steps=1, enter='bounceInRight')
-      h3 Background
+    slide(:steps=7 enter='bounceInRight' leave='bounceOutLeft')
+      h3 Backgrounds and Problem
       .center
         p Anything other than neutrinos that can deposit energy in the detector is background.
-      table
-        tr
-          th Background
-          th Source
-        tr
-          td Electron
-          td Reactor + Cosmogenic
-        tr
-          td Muons
-          td Reactor + Cosmogenic
-        tr
-          td Gamma
-          td Reactor + Cosmogenic
 
-    slide(:steps=8 enter='bounceInRight')
-      h3 Problem
-      eg-transition(enter='bounceInRight' leave='BounceOutRight')
-        p(v-if='step >=2') <b>Signal vs Background</b>
-      eg-transition(enter='bounceInRight' leave='bounceInRight')
-        p(v-if='step >=3') something
-      eg-transition(enter='bounceInRight' leave='bounceInRight')
-        p(v-if='step>=5') Background needs to be
-      ul
-        eg-transition(enter='bounceInRight' leave='bounceInRight')
-          li(v-if='step>=6') Understood
-        eg-transition(enter='bounceInRight' leave='bounceInRight')
-          li(v-if='step>=7') Reduced
-        eg-transition(enter='bounceInRight' leave='bounceInRight')
-          li(v-if='step>=8') Rejected
+      .container-fluid
+        .row
+          eg-transition(enter='bounceInRight' leave='bounceOutRight')
+            .col-5(v-if='step>=2')
+              ul.spaced-ul
+                li Alpha
+                li Beta
+                li Gamma
+                li Muon
+                li Neutron
+          eg-transition(enter='bounceInRight' leave='bounceOutRight')
+            .col-7(v-if='step >=3')
+              img(src="./assets/background_to_signal_representation.png" style="height: 38vh;")
+      eg-transition(enter='bounceInRight' leave='bounceOutRight')
+        p(v-if='step>=4') Background needs to be
+      ul.background-needs
+        eg-transition(enter='bounceInRight' leave='bounceOutRight')
+          li(v-if='step>=5') Understood
+        eg-transition(enter='bounceInRight' leave='bounceOutRight')
+          li(v-if='step>=6') Reduced
+        eg-transition(enter='bounceInRight' leave='bounceOutRight')
+          li(v-if='step>=7') Rejected
 
-    slide(:steps=3 enter='bounceInRight')
-      h3 Understanding the background
-      eg-transition(enter='bounceInRight' leave='bounceInRight')
-        p(v-if='step>=2') Source of background and their flux.
-      eg-transition(enter='bounceInRight' leave='bounceInRight')
-        p(v-if='step>=3') **Table with the flux for all backgrounds**
-
-    slide(:steps=5 enter='bounceInRight')
-      h3 Reducing the background
-      eg-transition(enter='bounceInRight' leave='bounceInRight')
+    slide(:steps=5 enter='bounceInRight' leave='bounceOutLeft')
+      h3 Background
+      eg-transition(enter='bounceInRight' leave='bounceOutRight')
         p(v-if='step>=2') To stop the backgrounds from reaching the detector:
       .container-fluid
         .row
-          .col-6
-            eg-transition(enter='bounceInRight' leave='bounceInRight')
+          .col-5.space
+            eg-transition(enter='bounceInRight' leave='bounceOutRight')
               p(v-if='step>=3') Shielding Material
-            eg-transition(enter='bounceInRight' leave='bounceInRight')
+            eg-transition(enter='bounceInRight' leave='bounceOutRight')
               p(v-if='step>=4') Shielding Geometry
-            eg-transition(enter='bounceInRight' leave='bounceInRight')
-              p(v-if='step>=5') Detector Geometry and Position
           .col-6
-            eg-transition(enter='fadeIn' leave='fadeOut')
-              img(src="./assets/experiment_site.png" v-if='step>=3' style='transform:scale(2); margin-left: 40%;margin-top: 20%;')
-
-    slide(:steps=2 enter='bounceInRight')
-      h3 Rejecting Background
-      eg-transition(enter='bounceInRight' leave='bounceInRight')
-        p(v-if='step>=2') Finally, of the background that reaches the detector,
+            eg-transition(enter='bounceInRight' leave='bounceOutRight')
+              div(v-if='step>=2')
+                a(:href="`${publicPath}MINER_paper.pdf`" target="_blank") [3]
+                img(src="./assets/experiment_site.png" style='transform:scale(2); margin-left: 40%;margin-top: 20%;')
+      eg-transition(enter='bounceInRight' leave='bounceOutRight')
+        p(v-if='step>=5') Likelihood analysis is one of the analytical methods used to analytically differentiate
           |
-          |we want to "somehow" differentiate it's signal from the signal of CEvNS
+          | between signal and background
 
     slide(:steps=3 enter='bounceInRight' leave='bounceOutLeft')
       h3 Simulation
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
-        p(v-if='step>=2') We use <b>GEANT4</b> as the framework for Simulation.
+        p(v-if='step>=2').center We use <b>GEANT4</b> as the framework for Simulation.
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
-        p(v-if='step>=2') Geant4 is a toolkit for the simulation of the passage of particles through
+        p(v-if='step>=2').center GEANT4 is a toolkit for the simulation of the passage of particles through
           | matter. Its areas of application include high energy, nuclear and accelerator physics,
           |as well as studies in medical and space science.
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
         p(v-if='step>=3') I was able to simulate the following geometry:
       .container-fluid
         .row
-          .col-4
+          .col-3
             eg-transition(enter='bounceInRight' leave='bounceOutRight')
               img(src="./assets/G4detector.png" alt="Image of geometry" v-if='step>=3')
-          .col-8
+          .col-9
             eg-transition(enter='bounceInRight' leave='bounceOutRight')
               table(v-if="step>=3")
                 tr
@@ -222,15 +226,15 @@
                 tr
                   td Cylinder
                   td Germanium
-                  td 0
-                  td (1/2)"
+                  td -
+                  td 12.7mm
                   td 4mm
                 tr
                   td Cylinder
                   td Silicon
-                  td (1/2)"
-                  td (3/2)"
-                  td 1"
+                  td 12.7mm
+                  td 38.1mm
+                  td 25.4mm
 
     slide(enter='fadeIn' :steps=2)
       h3 Thank you !
@@ -242,6 +246,11 @@
 import eagle from 'eagle.js'
 
 export default {
+  data () {
+    return {
+      publicPath: process.env.BASE_URL
+    }
+  },
   mixins: [eagle.slideshow],
   infos: {
     title: '6th Sem Project Proposal',
@@ -271,9 +280,8 @@ export default {
 }
 #ProjectProposal {
   color: black;
-
   .frontpage {
-    width: 110%;
+    width: 100%;
     h1 {
       font-size: 2.7em;
       line-height: 1.4;
@@ -303,6 +311,11 @@ export default {
   }
   p, li, td {
     font-family: 'Roboto';
+    z-index: 1;
+  }
+  p {
+    margin-bottom: 5px;
+    margin-top: 10px;
   }
   table, th, td {
     border: 1px solid #aaa;
@@ -319,6 +332,9 @@ export default {
     right: 20px;
     top: 20px;
     width: 20vw;
+  }
+  ul {
+    margin-top: 5px;
   }
   .text-left {
     text-align: left;
@@ -350,6 +366,38 @@ export default {
   .half-wide {
     width: 40vw;
     margin-left: 12vw;
+  }
+  .background-needs {
+    display: flex;
+    justify-content: space-evenly;
+    li {
+      margin-right: 42px;
+    }
+  }
+  .space {
+    p {
+      line-height: 400%;
+    }
+  }
+  .cross-section-plot {
+    position: absolute;
+    right: 20px;
+    top: 30vh;
+    width: 30vw;
+    z-index: 0;
+  }
+  .wide-slide {
+    .eg-slide-content {
+      margin: 0 30px;
+      width: unset;
+      max-width: 100%;
+    }
+  }
+  .spaced-ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 }
 </style>

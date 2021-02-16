@@ -23,6 +23,24 @@ export default {
             role: 'Project guidance'
           }
         ],
+        'References': [
+          {
+            name: '[1]',
+            role: 'SuperCDMS\'s SNOLAB'
+          },
+          {
+            name: '[2]',
+            role: 'Sharada\'s Project Update 1'
+          },
+          {
+            name: '[3]',
+            role: 'MINER Paper'
+          },
+          {
+            name: '[4]',
+            role: 'Phys. Rev. D 9(1974)'
+          }
+        ],
         'Software': [
           {
             name: 'Vue.js',
@@ -39,16 +57,6 @@ export default {
           {
             name: 'Hammer.js',
             role: 'Swipe events'
-          }
-        ],
-        'Assets': [
-          {
-            name: 'Irfan iLias',
-            role: 'Background Pattern'
-          },
-          {
-            name: 'Paper "Background study for MINER"',
-            role: 'Reactor Pool Schem-view'
           }
         ]
       }

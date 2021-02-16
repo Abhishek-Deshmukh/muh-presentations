@@ -2,10 +2,10 @@
 div
   .neutrino(:style="'animation-duration:' + 1/energy + 's;'")
     span ν
-  .line(:style="'margin-top: 30px; z-index: 0; animation-duration:' +  1.6/energy + 's;'")
-  .line(:style="'margin-top: 60px; z-index: 2; animation-duration:' + 1.2/energy +'s;'")
-  .line(:style="'margin-top: 104px; z-index: 0; animation-duration:' + 2/energy +'s;'")
-  .line(:style="'margin-top: 134px; z-index: 0; animation-duration:' + 1/energy +'s;'")
+  .line(:style="'margin-top: 20px; z-index: 0; animation-duration:' +  1.6/energy + 's;'")
+  .line(:style="'margin-top: 50px; z-index: 2; animation-duration:' + 1.2/energy +'s;'")
+  .line(:style="'margin-top: 94px; z-index: 0; animation-duration:' + 2/energy +'s;'")
+  .line(:style="'margin-top: 124px; z-index: 0; animation-duration:' + 1/energy +'s;'")
 </template>
 <script>
 export default {
@@ -21,13 +21,13 @@ export default {
 <style scoped lang="scss">
 @keyframes vibration {
   0% {
-    margin-top: 30px;
+    margin-top: 20px;
   }
   50% {
-    margin-top: 10px;
+    margin-top: 0px;
   }
   100% {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 

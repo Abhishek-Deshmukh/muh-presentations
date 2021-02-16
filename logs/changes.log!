@@ -1,0 +1,33 @@
+-[x] Rare event
+  -[x] 1kg detector in SUper CDMS (check)
+  -[x] cross-section plot
+  -[x] numbers from superCDMS Sudan
+  -[x] Big plot
+  -[x] Wrong plot
+
+-[x] MINER
+  -[x] what type of detector
+
+-[x] LETS BREAK IT DOWN
+  -[x] SIMULATION as a subset of BACKGROUND
+
+-[ ] REACTOR
+  -[ ] Uranium decay details with flux and stuff
+
+-[x] THE SIGNAL
+  -[x] CEvNS reference
+
+-[x] BACKGROUND
+  -[x] list down all background particles
+  -[x] combine with PROBLEM
+
+-[x] UBDERSTANDING THE BACKGROUND
+  -[x] table of sources
+  -[x] table of particles vs sources
+    -[x] fill with flux or TO BE Studied
+
+-[x] REJECTING BACKGROUND
+  -[x] likely hood analysis
+
+-[x] SIMULATION
+  -[x] all in SI units
