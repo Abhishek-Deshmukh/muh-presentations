@@ -1,6 +1,6 @@
 {
   "name": "my-presentations",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Central place for all my Presentations",
   "author": "Abhishek Anil Deshmukh",
   "repository": {
@@ -11,7 +11,9 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "scp -r ./dist/* dunce:~/presentations",
+    "serve": "echo 'serving built files' && python -m http.server --directory ./dist"
   },
   "dependencies": {
     "animate.css": "^3.7.2",
