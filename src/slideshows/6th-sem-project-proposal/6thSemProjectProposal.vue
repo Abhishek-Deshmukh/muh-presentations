@@ -14,6 +14,7 @@
           img.control-schema(src='./assets/controlsNext.svg')
           p Previous:
           img.control-schema(src='./assets/controlsPrev.svg')
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(:steps=4 enter='bounceInRight' leave='bounceOutLeft').wide-slide
       h3 Rare Event
@@ -25,7 +26,7 @@
               eg-transition(enter='bounceInRight' leave='bounceOutRight')
                 p(v-if="step>=2") Rare events are events that happen only a few times over a long period of time.
               eg-transition(enter='bounceInRight' leave='bounceOutRight')
-                p(v-if="step>=2") Like in the case of SuperCDMS, with 15 germanium Detectors about 600g each reached
+                p(v-if="step>=2") Like in the case of SuperCDMS, with 15 germanium detectors about 600g each reached
                   |
                   |a cross-section
                   |
@@ -33,12 +34,13 @@
                   a(href="https://www.slac.stanford.edu/exp/cdms/ScienceResults/Publications/PhysRevD.97.022002.pdf" target="_blank") [1]
               eg-transition(enter='bounceInRight' leave='bounceOutRight')
                 p(v-if="step>=3") Examples of such rare interactions would include Coherent Elastic Neutrino Nucleus S
-                  |cattering(CEvNS), Dark matter Interactions, neutrino less double beta decay.
+                  |cattering(CEνNS), Dark matter Interactions, neutrino less double beta decay.
               eg-transition(enter='bounceInRight' leave='bounceOutRight')
                 p(v-if="step>=4") Some examples of experiments that search for rare events are:
                   ul
-                    li <b>MINER</b> (CEvNS, Sterile Neutrino)
+                    li <b>MINER</b> (CEνNS, Sterile Neutrino)
                     li <b>SuperCDMS</b>. (Dark matter)
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(:steps=5, enter='bounceInRight' leave='bounceOutLeft').MINER
       h3
@@ -53,14 +55,15 @@
             p(v-if="step >= 3") Located at Nuclear Science Center in Texas A & M University
           .col-6
             eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
-              p(v-if="step >= 4") Searching for Coherent Elastic neutrino Nucleus Scattering (CEvNS)
+              p(v-if="step >= 4") Searching for Coherent Elastic Neutrino Nucleus Scattering (CEνNS)
             eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
               p(v-if="step >= 5") By placing low threshold, cryogenic germanium and silicon
                 |
                 |detectors a few meters from the reactor core.
           .col-6
             eg-transition(enter='bounceInRight' leave='bounceOutRight')
-              img(v-if="step >= 4" src="./assets/CEvNS.jpg" alt="CEvNS")
+              img(v-if="step >= 4" src="./assets/CEvNS.jpg" alt="CEνNS")
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(:steps=5, enter='bounceInRight' leave='bounceOutLeft')
       h3 Lets break it down
@@ -75,7 +78,7 @@
         .quarter(v-if='step >=3')
           img(src='./assets/icons/basic_paperplane.svg')
           h4 The signal
-          p Neutrino-Nucleus Collision
+          p Neutrino-Nucleus Scattering
 
       eg-transition(enter='fadeIn' leave='fadeOut')
         div(style="border: solid 1px black;border-radius: 15px;padding:10px;" v-if="step >= 4")
@@ -90,6 +93,7 @@
               img(src='./assets/icons/basic_display.svg')
               h4 The Simulation
               p GEANT4 and MCNP
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(:steps=8, enter='bounceInRight' leave='bounceOutLeft')
       h3 The Reactor
@@ -116,6 +120,7 @@
           .col-6
             eg-transition(enter='bounceInRight' leave='bounceOutRight')
               img(v-if='step >= 4' alt="Uranium Decay Chain" src="./assets/uranium_decay_chain.png").u-chain
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(:steps=8, enter='bounceInRight' leave='bounceOutLeft')
       h3 The Signal
@@ -123,7 +128,7 @@
         img(src="./assets/CEvNS.jpg" v-if="step >= 3").cevns
       .center
         eg-transition(enter='bounceInLeft' leave='bounceOutLeft')
-          p(v-if='step >= 2') Caused by CEvNS (Coherent Elastic Neutrino Nucleus Scattering)
+          p(v-if='step >= 2') Caused by CEνNS (Coherent Elastic Neutrino Nucleus Scattering)
             a(href="https://journals.aps.org/prd/pdf/10.1103/PhysRevD.9.1389" target="_blank") [4]
       .container-fluid
         .row
@@ -132,9 +137,9 @@
               Neutrino(:energy="1")
           eg-transition(enter='bounceInRight' leave='bounceOutRight')
             .col-7(v-if='step >= 3').half-wide
-              p.coherent <b>Coherent</b>: Collision with the nucleus as a whole. Requires the neutrino to have
+              p.coherent <b>Coherent</b>: Interaction with the nucleus as a whole. Requires the neutrino to have
                 |
-                | energy order of tens of MeV.
+                | energy of the order of tens of MeV.
         eg-transition(enter='bounceInRight' leave='bounceOutRight')
           p(v-if='step >= 4') <b>Elastic</b> implies conservation of Energy and Momentum.
         eg-transition(enter='bounceInRight' leave='bounceOutRight')
@@ -149,6 +154,7 @@
             a(:href="`${publicPath}sharada_project_Update_1.pdf`" target="_blank") [2]
             |
             | at 2 meters for a 100g Si detector
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(:steps=7 enter='bounceInRight' leave='bounceOutLeft')
       h3 Backgrounds and Problem
@@ -177,11 +183,12 @@
           li(v-if='step>=6') Reduced
         eg-transition(enter='bounceInRight' leave='bounceOutRight')
           li(v-if='step>=7') Rejected
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(:steps=5 enter='bounceInRight' leave='bounceOutLeft')
       h3 Background
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
-        p(v-if='step>=2') To stop the backgrounds from reaching the detector:
+        p(v-if='step>=2') To reduce backgrounds from reaching the detector:
       .container-fluid
         .row
           .col-5.space
@@ -195,9 +202,10 @@
                 a(:href="`${publicPath}MINER_paper.pdf`" target="_blank") [3]
                 img(src="./assets/experiment_site.png" style='transform:scale(2); margin-left: 40%;margin-top: 20%;')
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
-        p(v-if='step>=5') Likelihood analysis is one of the analytical methods used to analytically differentiate
+        p(v-if='step>=5') Statistical methods like likelihood analysis make use of background models which can
           |
-          | between signal and background
+          |be obtained from simulations
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(:steps=3 enter='bounceInRight' leave='bounceOutLeft')
       h3 Simulation
@@ -205,7 +213,9 @@
         p(v-if='step>=2').center We use <b>GEANT4</b> as the framework for Simulation.
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
         p(v-if='step>=2').center GEANT4 is a toolkit for the simulation of the passage of particles through
+          |
           | matter. Its areas of application include high energy, nuclear and accelerator physics,
+          |
           |as well as studies in medical and space science.
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
         p(v-if='step>=3') I was able to simulate the following geometry:
@@ -235,11 +245,13 @@
                   td 12.7mm
                   td 38.1mm
                   td 25.4mm
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter='fadeIn' :steps=2)
       h3 Thank you !
       p Credits and Acknowledgements
       end-credits
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 </template>
 
 <script>
@@ -398,6 +410,11 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+  }
+  .slide-number {
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
   }
 }
 </style>

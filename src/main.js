@@ -25,6 +25,7 @@ slideshows.list.forEach(function (slideshow) {
 routes.push({ path: '*', component: Home })
 
 let router = new Router({
+  mode: 'history',
   routes
 })
 
