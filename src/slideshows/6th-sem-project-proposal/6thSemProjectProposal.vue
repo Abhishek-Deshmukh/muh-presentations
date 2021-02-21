@@ -1,5 +1,6 @@
 <template lang="pug">
 #ProjectProposal.eg-theme-agrume
+  .progress-bar(:style="`width:${currentSlideIndex/slides.length*100}vw`")
   .eg-slideshow
     slide(enter='fadeIn' leave='bounceOutLeft')
       .center.frontpage
@@ -172,7 +173,7 @@
                 li Muon
                 li Neutron
           eg-transition(enter='bounceInRight' leave='bounceOutRight')
-            .col-7(v-if='step >=3')
+            .col-7(v-if='step >=2')
               img(src="./assets/background_to_signal_representation.png" style="height: 38vh;")
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
         p(v-if='step>=4') Background needs to be
@@ -245,6 +246,25 @@
                   td 12.7mm
                   td 38.1mm
                   td 25.4mm
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
+
+    slide(enter='bounceInRight' :steps=6 leave='bounceOutLeft')
+      h3 Proposal
+      ol
+        eg-transition(enter='bounceInRight' leave='bounceOutRight')
+          li(v-if="step>=2") Understanding background and optimizing shielding parameters for better reduction in MINER.
+        eg-transition(enter='bounceInRight' leave='bounceOutRight')
+          li(v-if="step>=3") Sterile Neutrino Search using MINER and CEvNS.
+      eg-transition(enter='bounceInRight' leave='bounceOutRight')
+        h3(v-if="step>=4") First steps
+      ol
+        eg-transition(enter='bounceInRight' leave='bounceOutRight')
+          li(v-if="step>=4") something 1
+        eg-transition(enter='bounceInRight' leave='bounceOutRight')
+          li(v-if="step>=5") something 2
+        eg-transition(enter='bounceInRight' leave='bounceOutRight')
+          li(v-if="step>=6") something 3
+
       span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter='fadeIn' :steps=2)
@@ -415,6 +435,15 @@ export default {
     position: absolute;
     bottom: 10px;
     right: 15px;
+  }
+  .progress-bar {
+    position: absolute;
+    height: 10px;
+    bottom: 0px;
+    left: 0px;
+    background: black;
+    z-index: 100;
+    transition: width 1s ease-out;
   }
 }
 </style>
