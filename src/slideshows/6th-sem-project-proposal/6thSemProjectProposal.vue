@@ -1,6 +1,7 @@
 <template lang="pug">
 #ProjectProposal.eg-theme-agrume
-  .progress-bar(:style="`width:${currentSlideIndex/slides.length*100}vw`")
+  .progress-bar-container
+    .progress-bar(:style="`width:${currentSlideIndex/slides.length*101}vw`")
   .eg-slideshow
     slide(enter='fadeIn' leave='bounceOutLeft')
       .center.frontpage
@@ -256,14 +257,14 @@
         eg-transition(enter='bounceInRight' leave='bounceOutRight')
           li(v-if="step>=3") Sterile Neutrino Search using MINER and CEvNS.
       eg-transition(enter='bounceInRight' leave='bounceOutRight')
-        h3(v-if="step>=4") First steps
+        h3(v-if="step>=4") Steps
       ol
         eg-transition(enter='bounceInRight' leave='bounceOutRight')
-          li(v-if="step>=4") something 1
+          li(v-if="step>=4") Defining MINER geometry with GEANT4
         eg-transition(enter='bounceInRight' leave='bounceOutRight')
-          li(v-if="step>=5") something 2
+          li(v-if="step>=5") Estimating cosmogenic and radiogenic backgrounds at MINER.
         eg-transition(enter='bounceInRight' leave='bounceOutRight')
-          li(v-if="step>=6") something 3
+          li(v-if="step>=6") Study Sterile Neutrino.
 
       span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
@@ -436,14 +437,21 @@ export default {
     bottom: 10px;
     right: 15px;
   }
-  .progress-bar {
-    position: absolute;
-    height: 10px;
+  .progress-bar-container {
+    overflow-X: hidden;
+    height: 1vh;
     bottom: 0px;
     left: 0px;
-    background: black;
+    position: absolute;
     z-index: 100;
-    transition: width 1s ease-out;
+    width: 100vw;
+    .progress-bar{
+      height: 100%;
+      border-radius: 0vh 0.5vh 0.5vh 0vh;
+      background: black;
+      z-index: 100;
+      transition: width 1s ease-out;
+    }
   }
 }
 </style>
