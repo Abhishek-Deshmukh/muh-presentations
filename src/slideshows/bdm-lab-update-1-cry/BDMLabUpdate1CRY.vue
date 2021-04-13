@@ -5,7 +5,7 @@
   .eg-slideshow
     slide(enter='fadeIn' leave='bounceOutLeft')
       .center.frontpage
-        h1 Simulating cosmic particles and radiation with CRY
+        h1 Simulating cosmic particles with CRY
         h4 Abhishek Anil Deshmukh
           br
           span Update 1 (6th sem project)
@@ -39,7 +39,7 @@
               li Can be run stand alone or with GEANT4 or MCNP or other libraries.
               li Simulated altitudes at 0 m, 2100 m and 11300 m.
               li Covers all latitudes.
-              li Accounts for comic rays due to solar activity.
+              li Accounts for changes due to solar cycle.
               li Provides particle Energy and Momentum.
               li
                 | The output is based on results from monte
@@ -80,7 +80,7 @@
               //  |
               //  a(href="https://numpy.org/" target="_blank") numpy
               //  |.
-              li Flux and Energy Distribution results matched with previously generated results by samir.
+              li Flux results matched with previously generated results by samir.
           .col-6.center
             img(src="./assets/Flux_2pi.png").half-image
             img(src="./assets/flux_samir.png").half-image
@@ -93,7 +93,7 @@
         h4.m-1 Energy Distribution plots
         img(src="./assets/Energy_distribution.png").half-image
         img(src="./assets/Energy_distribution2.png").half-image
-        img(src="./assets/energy_distribution_samir.png").half-image.ml-2
+        //img(src="./assets/energy_distribution_samir.png").half-image.ml-2
       span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter="fadeIn" leave="bounceOutLeft").wide-slide
@@ -122,16 +122,17 @@
       span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter="fadeIn" leave="bounceOutLeft").wide-slide
-      h3 Importing .stp import Geant4
+      h3 Integrating CAD into Geant4
       .container-fluid.mt-2
         .row
           .col-6
             h4.m-3 Problem
             ul.spaced-ul
-              li .stp files for .step files in which 3D CAD files are saved.
+              li .stp files or .step files in which 3D CAD files are saved.
               li Geant4 is not capable of importing .stp or .step files directly into it's geometry
               li Input was in .stp format
-              img(src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.--fMSTR-MSQd-xNMXPP3KQAAAA%26pid%3DApi&f=1" style="width:40vh;").half-image
+              //img(src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.--fMSTR-MSQd-xNMXPP3KQAAAA%26pid%3DApi&f=1" style="width:40vh;").half-image
+              img(src="./assets/GeometryTopView_samir.png")
           .col-6
             h4.m-3 Solution
             ul
