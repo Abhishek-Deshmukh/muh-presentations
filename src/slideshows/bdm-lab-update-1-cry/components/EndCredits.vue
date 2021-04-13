@@ -26,22 +26,50 @@ export default {
         'References': [
           {
             name: '[1]',
-            role: 'SuperCDMS\'s SNOLAB'
+            role: 'CRY documentation'
           },
           {
             name: '[2]',
-            role: 'Sharada\'s Project Update 1'
+            role: 'CRY download Page'
           },
           {
             name: '[3]',
-            role: 'MINER Paper'
+            role: 'Monte Carlo Simulation of Proton-Induced Cosmic Ray Cascades in Atmosphere'
           },
           {
-            name: '[4]',
-            role: 'Phys. Rev. D 9(1974)'
+            name: '[pdg]',
+            role: 'C.Patrignani er al. (Particle Data Group), Chin. Phys. C, 40, 100001 (2016) - p422'
+          },
+          {
+            name: '[FreeCAD]',
+            role: 'FreeCAD'
           }
         ],
         'Software': [
+          {
+            name: 'python and C++',
+            role: 'Programming Languages used'
+          },
+          {
+            name: 'CRY',
+            role: 'Primary Generating library'
+          },
+          {
+            name: 'pandas',
+            role: 'Data file handling'
+          },
+          {
+            name: 'scipy',
+            role: 'fitting'
+          },
+          {
+            name: 'numpy',
+            role: 'matrix generation'
+          },
+          {
+            name: 'matplotlib',
+            role: 'plots'
+          },
           {
             name: 'Vue.js',
             role: 'Front-end engine'

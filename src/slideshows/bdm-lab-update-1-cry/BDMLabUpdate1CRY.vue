@@ -19,9 +19,9 @@
       span.slide-number {{currentSlideIndex}}/{{slides.length}}
     slide(enter='fadeIn' leave='bounceOutLeft')
       .container-fluid
-        .row
+        .row(style="height:50vh;")
           h3 Outline
-          ol
+          ol.spaced-ul
             li Cosmic-ray Shower Library (CRY)
             li CRY output analysis
             li Importing .stp format geometry into Geant4
@@ -34,8 +34,8 @@
           a(href="http://nuclear.llnl.gov/simulation" target="_blank") [2]
       .container-fluid.mt-4
         .row
-          .col-6
-            ul
+          .col-6(style="height: 70vh;")
+            ul.spaced-ul
               li Can be run stand alone or with GEANT4 or MCNP or other libraries.
               li Simulated altitudes at 0 m, 2100 m and 11300 m.
               li Covers all latitudes.
@@ -57,13 +57,13 @@
       .container-fluid.mt-2
         .row
           .col-6
-            ul
+            ul.spaced-ul
               li Generated 10
                   sup 6
                   | events
               li in Stand alone mode.
               li Calculated the flux value from the particles produced by the library.
-              li Time handling in library is not well understood.
+              //li Time handling in library is not well understood.
               //li Plotting and analysis was done in
               //  |
               //  |
@@ -80,26 +80,42 @@
               //  |
               //  a(href="https://numpy.org/" target="_blank") numpy
               //  |.
-              li Flux and Energy Distribution results matched with previously generated results by samir bhaiya.
-            img(src="./assets/Energy_distribution.png").half-image
+              li Flux and Energy Distribution results matched with previously generated results by samir.
           .col-6.center
             img(src="./assets/Flux_2pi.png").half-image
-            img(src="./assets/Flux.png").half-image
+            img(src="./assets/flux_samir.png").half-image
+            //img(src="./assets/Flux.png").half-image
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
+
+    slide(enter="fadeIn" leave="bounceOutLeft").wide-slide
+      h3 CRY output analysis - contd.
+      .mt-5
+        h4.m-1 Energy Distribution plots
+        img(src="./assets/Energy_distribution.png").half-image
+        img(src="./assets/Energy_distribution2.png").half-image
+        img(src="./assets/energy_distribution_samir.png").half-image.ml-2
       span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter="fadeIn" leave="bounceOutLeft").wide-slide
       h3 CRY output analysis - contd.
       .container-fluid.mt-2
+        h4.m-1 Angular Distribution
         .row
           .col-6
-            ul
-              li Particles were not all perpendicular.
-              li Incidence angle could be trivially calculated from the vector momentum of particles coming from CRY.
+            ul.spaced-ul
+              //li Incidence angle was calculated from the vector momentum of particles coming from CRY.
               li θ is the angle between momentum vector and area vector of surface.
-              li The plot fit excellently (chi
+              //li The data points are described with (chi
+              //  sup 2
+              //  |/ndf = 8.63E-5) with 5% error. [equation in plot]
+              li Muons follow a "cos
                 sup 2
-                |/dof = 8.63E-5) with 5% error. [equation in plot]
-              li The derivation for it goes here.
+                |"
+                | distribution
+                sup [pdg]
+                |.
+              li Another "cos" due to area component, as flux is defined normally.
+              li and the "sin" due to the solid angle factor.
               li Matching with the theoretical result.
           .col-6
             img(src="./assets/Component_distribution.png")
@@ -111,24 +127,28 @@
         .row
           .col-6
             h4.m-3 Problem
-            ul
+            ul.spaced-ul
               li .stp files for .step files in which 3D CAD files are saved.
               li Geant4 is not capable of importing .stp or .step files directly into it's geometry
               li Input was in .stp format
-            p A screenshot of it
+              img(src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.--fMSTR-MSQd-xNMXPP3KQAAAA%26pid%3DApi&f=1" style="width:40vh;").half-image
           .col-6
             h4.m-3 Solution
             ul
               li Open the .stp file in FreeCAD
+                sup [
+                  a(href="https://www.freecadweb.org/") FreeCAD
+                  |]
               li Export each component as .obj file
               li Import the following library into your project [
                 a(href="https://github.com/christopherpoole/CADMesh") christopherpoole/CADMesh
                 |].
-              li Now you will be abel to import .obj files into Geant4 geometry.
+              li Now you will be able to import .obj files into Geant4 geometry.
             h4.m-3 Caveats
             ul
               li Conversion from .stp to .obj is very manual.
               li It can get cumbersome if the number of parts in the .stp file is too large as you will have to export each of them individually.
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter='fadeIn' :steps=2)
       h3 Thank you !
@@ -185,7 +205,7 @@ export default {
     }
   }
   p, li, td {
-    font-family: 'Roboto';
+    font-family: 'Roboto',serif;
     z-index: 1;
   }
   p {
@@ -200,7 +220,7 @@ export default {
     padding: 10px;
   }
   h1, h2, h3, h4, th {
-    font-family: 'Montserrat';
+    font-family: 'Montserrat',serif;
   }
   ul {
     margin-top: 5px;
@@ -275,6 +295,14 @@ export default {
       z-index: 100;
       transition: width 1s ease-out;
     }
+  }
+  .wide-flex {
+    width: 100%;
+    height: 100%;
+  }
+  .right {
+    display: block;
+    margin-left: auto;
   }
 }
 </style>
