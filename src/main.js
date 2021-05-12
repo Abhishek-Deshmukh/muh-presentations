@@ -8,10 +8,12 @@ import 'eagle.js/dist/eagle.css'
 import hljs from 'highlight.js'
 
 import slideshows from './slideshows/slideshows.js'
+import VueMathjax from 'vue-mathjax'
 /* eslint-disable no-new */
 
 Vue.use(Eagle)
 Vue.use(Router)
+Vue.use(VueMathjax)
 Vue.config.productionTip = false
 Options.hljs = hljs
 

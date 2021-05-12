@@ -21,6 +21,7 @@
     "eagle.js": "^0.4.4",
     "highlight.js": "^9.18.5",
     "vue": "^2.6.12",
+    "vue-mathjax": "^0.0.11",
     "vue-router": "^2.2.0"
   },
   "devDependencies": {
