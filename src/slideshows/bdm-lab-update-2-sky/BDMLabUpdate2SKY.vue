@@ -24,19 +24,21 @@
         .row(style="height:50vh;")
           h3 Outline
           ol.spaced-ul
-            li Defining the problem
+            li Limiting the surface area of CRY to simulate.
             li Computational approach
             li Analytical approach
             li Conclusion
+            li MINER background in DRU with veto detectors
+            li Updates on my work in simulation at SHSU
 
     slide(enter='fadeIn' leave='bounceOutLeft')
       .container-fluid
         .row(style="height:50vh;")
           h3 Problem
-          p We need to determine how much sky (cosmic background input area) to simlate because.
+          p We need to determine surface area (cosmic background input area) to simulate because.
           ol.spaced-ul
-            li Simulating too less area would be faster but would not be simulating the sky to a good enough extent.
-            li Simulationg too much would be more accurate but computationally expensive
+            li Simulating too less area would be less computationally expensive but would not be simulating the sky to a good enough accuracy.
+            li Simulating too much would be more accurate but computationally expensive.
             li We need to find a sweet spot, so we need to come up with an acceptable error and simulating accordingly.
       span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
@@ -45,12 +47,15 @@
       .container-fluid.mt-4
         .row
           .col-6(style="height: 70vh;")
-            ul.spaced-ul
-              li Simulate a 16inch*16inch*1/2inch silicon detector
+            ul
+              li Simulate a silicon detector which a cuboid of dimensions 16inch x 16inch x 1/2inch .
               li Keep it 35 inches away from the input layer (CRY input)
-              li Simulate for larger and larger dimensions of detector and see where it growth is small
+              li Simulate for larger dimensions of input layer and see where the difference in deposited energy due to increase in dimension is small.
+            div(style="width: 100%; display: flex;")
+              img(src="./assets/input_area_2_0000.png" style="margin-left: auto;").half-image
           .col-6.center
-            img(src="./assets/comp1_0000.png")
+            // TODO: label this
+            img(src="./assets/input_area_1._0000.png")
       span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter="fadeIn" leave="bounceOutLeft").wide-slide
@@ -61,10 +66,14 @@
             ul.spaced-ul
               li Simulated 10<sup>8</sup> events
               li For inputs of 10x10m<sup>2</sup> and 30x30m<sup>2</sup>
-              li Took 9hrs on my laptop (each)
-              li Not statistically valid at high energy
+              // li Took 9hrs on my laptop (each)
+              li In high energy ranges (> 100MeV) number of events is too less (< 10) and so cannot be used for statistics.
           .col-6
             img(src="./assets/all_particles_diff_10_30.png")
+            p This histogram is the energy distribution of particles reaching the detector.
+            ul
+              li X-axis: The energy of the particle.
+              li Y-axis: The number of particles which made it to the detector.
       span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter="fadeIn" leave="bounceOutLeft").wide-slide
@@ -73,10 +82,10 @@
         .row
           .col-6
             ul.spaced-ul
-              li Lets simulate just muons
-              li Again 10<sup>8</sup> events
+              li Simulating just muons again 10<sup>8</sup> events.
               li For inputs of 10x10m<sup>2</sup> and 30x30m<sup>2</sup>
-              li Took 7hrs on my laptop (each)
+              li In high energy ranges (> 100MeV) number of events is too less (0) and so cannot be used for statistics.
+              // li Took 7hrs on my laptop (each)
           .col-6
             img(src="./assets/10up/diff_10_30.png").half-image
             img(src="./assets/10up/diff_10_30_total.png").half-image
@@ -85,8 +94,11 @@
     slide(enter="fadeIn" leave="bounceOutLeft")
       h3 Conclusion from computational approach
       ol
-        li Higher energy events are rare
-        li As you increase the number of events the upper bound for the energy which will be statistically relevant will increases
+        li Higher energy events are rare.
+        li As you increase the number of events the upper bound for the energy which will be statistically relevant will increases.
+        li Making the simulation accurate enough to get a acceptable answer, would be too computationally expensive.
+        li Trying an analytical approach.
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter='fadeIn' leave='bounceOutLeft').wide-slide
       h3 Analytical approach
@@ -117,7 +129,7 @@
                 vue-mathjax(formula="$ \\alpha_i$")
                 | )
               li The solid angle projected will be
-                vue-mathjax(formula='$$\\omega = \\sum_{i=1}^2{\\alpha_i} - 2\\pi$$')
+                vue-mathjax(formula='$$\\omega = \\sum_{i=1}^4{\\alpha_i} - 2\\pi$$')
           .col-6.center
             img(src="./assets/analytical_3.png")
       span.slide-number {{currentSlideIndex}}/{{slides.length}}
@@ -125,7 +137,7 @@
     slide(enter='fadeIn' leave='bounceOutLeft')
       h3 Analytical approach - Solid angle
       div(height="80vh")
-        vue-mathjax(formula='$$\\omega = \\operatorname{asin}{\\left(\\frac{\\left(D - 2 x\\right) \\left(D - 2 y\\right)}{\\sqrt{4 h^{2} + \\left(D - 2 x\\right)^{2}} \\sqrt{4 h^{2} + \\left(D - 2 y\\right)^{2}}} \\right)} + \\operatorname{asin}{\\left(\\frac{\\left(D - 2 x\\right) \\left(D + 2 y\\right)}{ \\sqrt{4 h^{2} + \\left(D - 2 x\\right)^{2}} \\sqrt{4 h^{2} + \\left(D + 2 y\\right)^{2}}} \\right)} + \\operatorname{asin}{\\left(\\frac{\\left(D + 2 x\\right) \\left(D - 2 y\\right)}{ \\sqrt{4 h^{2} + \\left(D + 2 x\\right)^{2}} \\sqrt{4 h^{2} + \\left(D - 2 y\\right)^{2}}} \\right)} + \\operatorname{asin}{\\left(\\frac{\\left(D + 2 x\\right) \\left(D + 2 y\\right)}{\\sqrt{4 h^{2} + \\left(D + 2 x\\right)^{2}} \\sqrt{4 h^{2} + \\left(D + 2 y\\right)^{2}}} \\right)} - 2 \\pi$$')
+        vue-mathjax(formula='$$\\omega = \\operatorname{acos}{\\left(\\frac{\\left(D - 2 x\\right) \\left(D - 2 y\\right)}{\\sqrt{4 h^{2} + \\left(D - 2 x\\right)^{2}} \\sqrt{4 h^{2} + \\left(D - 2 y\\right)^{2}}} \\right)} + \\operatorname{acos}{\\left(\\frac{\\left(D - 2 x\\right) \\left(D + 2 y\\right)}{ \\sqrt{4 h^{2} + \\left(D - 2 x\\right)^{2}} \\sqrt{4 h^{2} + \\left(D + 2 y\\right)^{2}}} \\right)} + \\operatorname{acos}{\\left(\\frac{\\left(D + 2 x\\right) \\left(D - 2 y\\right)}{ \\sqrt{4 h^{2} + \\left(D + 2 x\\right)^{2}} \\sqrt{4 h^{2} + \\left(D - 2 y\\right)^{2}}} \\right)} + \\operatorname{acos}{\\left(\\frac{\\left(D + 2 x\\right) \\left(D + 2 y\\right)}{\\sqrt{4 h^{2} + \\left(D + 2 x\\right)^{2}} \\sqrt{4 h^{2} + \\left(D + 2 y\\right)^{2}}} \\right)} - 2 \\pi$$')
 
     slide(enter='fadeIn' leave='bounceOutLeft').wide-slide
       h3 Analytical approach (continued)
@@ -140,10 +152,68 @@
               li so with an error of 2% the input layer will have to be 1440*1440inch<sup>2</sup> which is 36.58*36.58m<sup>2</sup>.
           .col-6.center
             img(src="./assets/detector_input.png").half-image
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter='fadeIn' leave='bounceOutLeft')
       h3 Conclusion
-      p In conclusion we now have a method to get an upper bound for the input layer as a function of the geometry and acceptable error.
+      p(style="margin-top: 30vh;") In conclusion we now have a method to get an upper bound for the input layer as a function of the geometry and acceptable error.
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
+
+    slide(enter='fadeIn' leave='bounceOutLeft').wide-slide
+      h3 Radiogenic simulation - Premise
+      .container-fluid.mt-4
+        .row
+          .col-6
+            h4.m-0 Premise
+            ul
+              li Simulated geometry for Veto
+              li Isotropic gamma radiation (Simulating radiogenic background)
+              li Energy distribution of gamma from SNOLab Background data
+              li Simulation to find out particle rate to simulate experimental result
+          .col-6
+            img(src="./assets/03-06-2021_0000.png")
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
+
+    slide(enter='fadeIn' leave='bounceOutLeft').wide-slide
+      h3 Radiogenic simulation - Result
+      .container-fluid.mt-4
+        .row
+          .col-6
+            ul
+              li Mass of coin was 11.19g, simulation was run for
+              li Applying a single scatter cut (Meaning filtering out only the events which deposited energy onto the coin but not on any of the other detectors.)
+              li
+                |
+                vue-mathjax(formula="$2.398 \\times 10^9$")
+                | particles/day can produce 235 DRU (experimental result)
+              li Now this simulation can be used to test different shielding geometries and predict the output on experimental measurement.
+                |
+                |
+                vue-mathjax(formula="$10^9$")
+                |
+                |particles
+            img(src="./assets/input_gamma.png").half-image
+          .col-6
+            img(src="./assets/ssc_50_300.png").half-image
+            img(src="./assets/sscplt.png").half-image
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
+
+    slide(enter='fadeIn' leave='bounceOutLeft')
+      h3 Updates on the Simulation at SHSU
+      p
+        b Done:
+        |
+        | I integrated the .stp format geometry of the detector into simulation geometry.
+      p.mt-5
+        b Issue:
+        |
+        | The whole things went as one object, and we can't get the logical volumes of the internal parts for recording energy depositions, making the whole veto geometry pointless.
+      p.mt-5
+        b Solutions:
+      ol.mt-0
+        li Get the parts exported individually and then assemble them in the simulation. (Most probably what we will be doing)
+        li Make the geometry from scratch.
+      span.slide-number {{currentSlideIndex}}/{{slides.length}}
 
     slide(enter='fadeIn' :steps=2)
       h3 Thank you !

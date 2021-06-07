@@ -26,23 +26,7 @@ export default {
         'References': [
           {
             name: '[1]',
-            role: 'CRY documentation'
-          },
-          {
-            name: '[2]',
-            role: 'CRY download Page'
-          },
-          {
-            name: '[3]',
-            role: 'Monte Carlo Simulation of Proton-Induced Cosmic Ray Cascades in Atmosphere'
-          },
-          {
-            name: '[pdg]',
-            role: 'C.Patrignani er al. (Particle Data Group), Chin. Phys. C, 40, 100001 (2016) - p422'
-          },
-          {
-            name: '[FreeCAD]',
-            role: 'FreeCAD'
+            role: 'Mouli Chaudhry'
           }
         ],
         'Software': [
@@ -53,6 +37,10 @@ export default {
           {
             name: 'CRY',
             role: 'Primary Generating library'
+          },
+          {
+            name: 'cern-root',
+            role: 'DRU Analysis and calculation'
           },
           {
             name: 'pandas',
