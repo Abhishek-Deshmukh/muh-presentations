@@ -218,7 +218,7 @@
             ul
               li Simulated geometry for Veto
               // TODO: backup decay chain
-              li Isotropic gamma radiation (Simulating radiogenic background from thorium)
+              li Isotropic gamma radiation
               li Energy distribution of gamma from SNOLab Background data
               li Simulation to find out particle rate to simulate experimental result (~321 DRU)
               // TODO: Reference Mouli di
@@ -245,7 +245,7 @@
               li
                 |
                 vue-mathjax(formula="$2.398 \\times 10^9$")
-                | particles/day can produce 235 DRU (experimental result)
+                | particles/day can produce 321 DRU (experimental result)
               li Now this simulation can be used to test different shielding geometries and predict the output on experimental measurement.
                 |
                 |

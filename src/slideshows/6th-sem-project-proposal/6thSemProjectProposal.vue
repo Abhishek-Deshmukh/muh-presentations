@@ -297,7 +297,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang='scss'
 @import 'node_modules/eagle.js/dist/themes/agrume/agrume';
 @font-face {
   font-family: 'Roboto';
