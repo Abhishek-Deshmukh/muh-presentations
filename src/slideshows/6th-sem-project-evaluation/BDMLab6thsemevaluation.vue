@@ -22,11 +22,11 @@
         eg-transition(enter='fadeInUp')
           li(v-if='step===3') MINER
         eg-transition(enter='fadeInUp')
-          li(v-if='step===3') Cosmological Background
+          li(v-if='step===3') Cosmogenic Background
         eg-transition(enter='fadeInUp')
           li(v-if='step===3') Radiogenic Background
         eg-transition(enter='fadeInUp')
-          li(v-if='step===3') Testing Shielding
+          li(v-if='step===3') Effects of Pb Shielding
         eg-transition(enter='fadeInUp')
           li(v-if='step===3') Contributions
         eg-transition(enter='fadeInUp')
@@ -36,20 +36,21 @@
   slide(enter='fadeIn' :steps=5)
     slide-number(slide_number=2)
     h1 CEνNS
+      a(href="https://journals.aps.org/prd/pdf/10.1103/PhysRevD.9.1389" target="__blank").reference [1]
     .container-fluid
       .row
         .col-6.ps-5
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
-            p(v-if='step===2') Coherent Elastic Neutrino Nucleus Scattering
+            p(v-if='step===2') Coherent elastic neutrino nucleus scattering.
           ul
             eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
-              li(v-if='step===2') <strong>Coherent</strong>:Interaction with
+              li(v-if='step===2') <strong>Coherent</strong>: Interaction with
                 |
-                | the nucleus as a whole. Requires the neutrino to have energ
-                | y in range of 10s of MeVs
+                | the nucleus as a whole. Requires the neutrino to have energy
+                | in range of 10s of MeVs.
             eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
-              li(v-if='step===2') <strong>Elastic</strong>:Conserves Energy an
-                |d Momentum
+              li(v-if='step===2') <strong>Elastic</strong>: Conserves energy an
+                |d momentum.
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
             p.mb-0(v-if='step===2') Such an interaction causes:
           ul.mt-2(v-if='step<=3')
@@ -58,9 +59,10 @@
             eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
               li(v-if='step===2') Nuclear Recoil
           eg-transition(enter='fadeInRight' leave='fadeOutLeft')
-            p(v-if='step===4') CEνNS interactions are rare
+            p(v-if='step===4') CEνNS interactions are rare.
           eg-transition(enter='fadeInRight' leave='fadeOutLeft')
-            p(v-if='step===4') Crossection: 7.4 x 10<sup>-42</sup>cm<sup>2</sup>
+            p(v-if='step===4') Crosssection between neutrino and Si atom is less than order -42 per cm<sup>2</sup>.
+             a(href="https://arxiv.org/pdf/1510.00999.pdf" target="__blank").reference [2]
           .neutrino-container
             eg-transition(leave='slide')
               neutrino.mt-5
@@ -78,22 +80,23 @@
             p(v-if='step===2').mt-3.mb-4 Mitchell Institute Neutrino Experiment at
               |
               |Reactor
+              a(href="https://arxiv.org/pdf/1510.00999.pdf" target="__blank").reference [3]
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
-            p(v-if='step===2').mt-5.mb-0 Dedicated to finding CEvNS
+            p(v-if='step===2').mt-5.mb-0 Dedicated to measuring CEvNS.
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
-            p(v-if='step===2').mt-0 By placing low threshold cryogenic
+            p(v-if='step===2').mt-0 By placing low energy threshold cryogenic
               |
-              | germanium and silicon detectors a few meters from the reactor core
+              | germanium and silicon detectors a few meters from the reactor core.
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
-            p(v-if='step===2').mb-2 Uses 1MW TRIGA reactor, fuelled with U<sup>237</sup>
+            p(v-if='step===2').mb-2 Uses 1MW TRIGA reactor, fuelled with Lightly enriched Uranium.
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
-            p(v-if='step===2 || step === 3 || step ===4').mt-2 For a 100g
+            p(v-if='step===2 || step === 3 || step ===4').mt-2 100g
               |
-              | silicon detector at 2m it receives a flux of
+              | Si detector at 2m receives a flux of
               |
               vue-mathjax(formula="$3.73\\times 10^{11}$ neutrino/cm$^2$/s")
               |
-              | which translates to ~ 0.448 events/day
+              | which translates to ~ 0.448 events/day.
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
             p(v-if='step===4').mb-3 Neutrinos aren't the only particles
               |
@@ -114,7 +117,7 @@
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
             p(v-if='step===4').mb-3 These backgrounds can be classified into
               |
-              |2 categories based on their sources: Cosmological, and Radiogenic
+              |2 categories based on their sources: Cosmogenic, and Radiogenic.
         .col-6
           eg-transition(enter='fadeInRight' leave='fadeOutRight')
             img(src='./assets/Nuclear_Science_Center.png' v-if='step===2').nsc
@@ -127,41 +130,45 @@
 
   slide(enter='fadeIn' leave='fadeOut' :steps=8).cosmo
     slide-number(slide_number=4)
-    h1 Cosmological Background
+    h1 Cosmogenic Background
     .container-fluid
       .row
         .col-6.ps-5
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
-            p(v-if='step>=2 && step <=7').mt-4.mb-0 Consists of cosmic ray showers
+            p(v-if='step>=2 && step <=7').mt-2.mb-0 Consists of cosmic ray showers.
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
             p(v-if='step>=2 && step <=7').mt-4.mb-0 Simulated by Cosmic-ray Shower Library
               |
-              |(CRY)
+              |(CRY).
+              a(href="https://nuclear.llnl.gov/simulation/doc_cry_v1.7/cry.pdf" target="__blank").reference [5]
           eg-transition(enter='fadeInLeft' leave='fadeOutLeft')
-            p(v-if='step>=2 && step <=7').mt-0 The output is based on simulations of atmosphere
+            p(v-if='step>=2 && step <=7').mt-0.mb-3 The output is based on simulations of atmosphere
               |
-              |with cosmic-ray primaries
+              |with cosmic-ray primaries.
+              a(href="https://www.osti.gov/servlets/purl/902609/" target="__blank").reference [4]
           img(src="./assets/Flux_2pi.png" v-if='step===2').flux
           img(src="./assets/Component_distribution.png" v-if='step===2').comp-dist
           eg-transition(enter='none' leave='fadeOutLeft')
-            p(v-if='step>=3 && step <=7').mb-1 CRY considers changes due to:
-          ul.mt-1
+            p(v-if='step>=3 && step <=7').mb-1.mt-3 CRY considers changes due to:
+          ul.mt-1.mb-0
             eg-transition(enter='none' leave='fadeOutLeft')
               li(v-if='step >=3 && step <=7') Solar cycle
             eg-transition(enter='none' leave='fadeOutLeft')
               li(v-if='step>=4 && step <= 7') Latitude
             eg-transition(enter='none' leave='fadeOutLeft')
-              li(v-if='step>=5 && step <= 7') Altitude
+              li(v-if='step>=5 && step <= 7').mb-0.pb-0 Altitude
           eg-transition(enter='none' leave='fadeOutLeft')
-            p(v-if='step===6 || step===7 ') It simulates the specified surface area of the sky
+            p(v-if='step===6 || step===7 ').mt-3.mb-2 It simulates the specified surface area of the sky.
           eg-transition(enter='none' leave='fadeOutLeft')
-            p(v-if='step==7') We need to find an optimised input surface are
+            p(v-if='step==7').mt-3 We need to find an optimised input surface are
               |a such that, it is accurate enough but not too computationally
               |expensive.
 
         .col-6.center
           img(src='./assets/muon_spectrum.png' v-if='step===2').single-image
+          a(href="https://www.osti.gov/servlets/purl/902609/" v-if='step===2' target="__blank").reference [4]
           img(src='./assets/proton_primaries.png' v-if='step===3').single-image
+          a(href="https://www.osti.gov/servlets/purl/902609/" v-if='step===3' target="__blank").reference [4]
           img(src='./assets/latitudes.jpg' v-if='step===4').single-image
           ul(v-if='step===5' style='list-style: none;')
             li 0m
@@ -211,9 +218,9 @@
       img(src="./assets/detector_input.png" v-if='step>=3' style='background: white;').bottom-right
       .result-container(v-if='step>=4')
         p.heading Result
-        p.result For the MINER setup with input layer at 16inches from the
+        p.result The MINER setup with input layer at 35 inches from the
           |
-          |detector will need a
+          |detector needs a
           |
           vue-mathjax(formula='$36.58\\,m \\times 36.58\\,m$')
           |
@@ -226,15 +233,15 @@
     .container-fluid
       .row
         .col-6.ps-5
-          p Recorded gamma background from SNOLab is used to predict the energy of a particle.
-          p Primarily gamma background, also called as ambient gamma
-          p The background need to be isotropic in nature
+          p Recorded gamma background from SNOLAB is used to predict the energy of a particle.
+          p Primarily gamma background, also called as ambient gamma.
+          p The background need to be isotropic in nature.
         .col-6.center
           img(src="./assets/total_background.png").single-image
 
   slide(enter='fadeIn' leave='fadeOut' :steps=8).radio
     slide-number(slide_number=8)
-    h1 Testing shielding
+    h1 Effects of Pb Shielding
     .pop-up(v-if='step===4')
       span.title Aim
       br
@@ -250,15 +257,16 @@
       .row
         .col-6
           p(v-if='step>=1') Detector veto
+          img(src="./assets/detector3.png" v-if='step===1').single-image
           p(v-if='step>=2') Geant4 simulation
           p(v-if='step>=3') Cubic Lead Shielding on 5 sides
           p(v-if='step>=5') Step 1: Calibration
-          p(v-if='step>=6') Step 2: Run the simulation for different wall thicknesses
+          p(v-if='step>=6') Step 2: Run the simulation for different wall thicknesses.
           p(v-if='step>=7') Step 3: Compare results
         .col-6.center
-          img(src="./assets/crossection_12_june_0000.png" v-if='step===1').single-image
-          p(v-if='step===1') Importing CAD files into Geant4
-          ul(v-if='step===1' style='text-align: left;')
+          img(src="./assets/detector1.png" v-if='step===1').single-image
+          // p(v-if='step===1') Importing CAD files into Geant4
+          // ul(v-if='step===1' style='text-align: left;')
             li Export the geometry in .stp format
             li Open the .stp file in FreeCAD
             li Import CADMesh into your project
@@ -284,7 +292,7 @@
     h1 Contributions to the MINER Simulation team
     .container-fluid
       .row
-        .col-9
+        .col-9.center
           p
             |
             | I integrated the .stp format geometry of a few detectors and a few
@@ -337,7 +345,6 @@
     h1 Conclusions
     .container
       ol.spread-list
-        li Contributed Geometry building at MINER simulation team.
         li Analysis of CRY output showed angular distribution of muons follows
           |
           vue-mathjax(formula=' $ cos^3(\\theta)sin(\\theta) $ ')
@@ -594,5 +601,11 @@ export default {
       left: 25vw;
       z-index: 100;
     }
+  }
+  .reference {
+    opacity: 20%;
+    color: white;
+    vertical-align: sub;
+    font-size: 30px;
   }
 </style>

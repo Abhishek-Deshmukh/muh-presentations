@@ -26,7 +26,23 @@ export default {
         'References': [
           {
             name: '[1]',
-            role: ''
+            role: 'Daniel Z Freedman "coherent effects of a weak neutral current"'
+          },
+          {
+            name: '[2]',
+            role: 'Nader Mirabolfathi "Toward single electron resolution Phonon mediated Ionization detectors"'
+          },
+          {
+            name: '[3]',
+            role: 'G. Agnolet et al "Background studies for the MINER Coherent Neutrino Scattering reactor experiment"'
+          },
+          {
+            name: '[4]',
+            role: 'Chris Hangmann "Monte Carlo Simulation of Proton Induced Cosmic Ray Cascades in the atmosphere"'
+          },
+          {
+            name: '[5]',
+            role: 'Chris Hangmann "CRY"'
           }
         ],
         'Software': [
@@ -40,7 +56,7 @@ export default {
           },
           {
             name: 'cern-root',
-            role: 'DRU Analysis, calculation and plots'
+            role: 'DRU Analysis, calculation, plots'
           },
           {
             name: 'pandas',
